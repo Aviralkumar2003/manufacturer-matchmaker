@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: Manufacturer Matchmaking Platform API
+  version: 0.1.0
+  description: Checkpoint 1 platform boundary. Feature routes are added with their checkpoint contracts.
+servers:
+  - url: /
+paths:
+  /healthz:
+    get:
+      operationId: getHealth
+      summary: Public liveness and readiness status without infrastructure details
+      security: []
+      responses:
+        '200':
+          description: Application and database are ready
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+        '503':
+          description: Application is alive but not ready
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+  /api/session:
+    get:
+      operationId: getSession
+      summary: Return signed-in state only
+      security: []
+      responses:
+        '200':
+          description: Session state; never includes Google tokens or document data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionState'
+  /api/csrf:
+    get:
+      operationId: getCsrf
+      summary: Obtain the CSRF token for state-changing API requests
+      security: []
+      responses:
+        '200':
+          description: CSRF token
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [headerName, token]
+                properties:
+                  headerName: { type: string }
+                  token: { type: string }
+components:
+  schemas:
+    Health:
+      type: object
+      additionalProperties: false
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [UP, DOWN]
+    SessionState:
+      type: object
+      additionalProperties: false
+      required: [signedIn]
+      properties:
+        signedIn: { type: boolean }
+    Problem:
+      type: object
+      description: RFC 9457 problem details; no stack trace, SQL, secrets, or path disclosure.
+      required: [type, title, status]
+      properties:
+        type: { type: string, format: uri-reference }
+        title: { type: string }
+        status: { type: integer, minimum: 400, maximum: 599 }
+        detail: { type: string }
+        instance: { type: string, format: uri-reference }
+        requestId: { type: string }
