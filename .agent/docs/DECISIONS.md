@@ -5,6 +5,7 @@
 | ID | Decision | Rationale | Approved by | Status |
 |---|---|---|---|---|
 | BD-14 | Permit the existing Spring Boot 4.1.2 pin as an exception to the 14-day release-age rule for checkpoint 1. | Section 10 requires a minimum of 4.1.2 while the same section's 14-day rule would otherwise forbid it until 2026-11-05. | Founder, in this chat on 2026-10-27 | Approved; advisory audit still required before build verification |
+| BD-15 | Use the O-13 safe default Java base package `app.matchmaker` for the existing Spring Boot starter. | The founder requested one correct backend tree; this also lets Spring scan the checkpoint 1 platform ports. | Bootstrap section 14 safe default; founder may replace before CP1 closes | Applied; existing smoke test passes |
 
 | ID | Decision | Alternatives declined | Rationale | Source | Status |
 |---|---|---|---|---|---|

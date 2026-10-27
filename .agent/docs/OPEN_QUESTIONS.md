@@ -3,11 +3,11 @@
 ## Current workspace status, 2026-10-27
 
 - `docs/PRD.md` v4 is present; the earlier missing-source blocker is resolved.
-- The founder supplied `https://github.com/Aviralkumar2003/manufacturer-matchmaker`. A local Git checkout and `checkpoint/1-bootstrap` branch now exist. Remote push, PR review and history secret scan still need evidence.
+- The founder supplied `https://github.com/Aviralkumar2003/manufacturer-matchmaker`. A local Git checkout and `checkpoint/1-bootstrap` branch now exist and were pushed. PR review and history secret scan still need evidence.
 - Founder will list which cloud prerequisites are ready. Do not record any of SP-1 through SP-10 as passed before account-specific checks.
 - The dependency and CI changes required in checkpoint 1 need founder approval under bootstrap section 3. Prepare a specific list before requesting approval.
 - The 4.1.2 release-age conflict is resolved by founder-approved exception BD-14; the advisory audit remains required.
-- The founder approved the checkpoint 1 contract drafts in this chat on 2026-10-27; a separate contract commit is pending.
+- The founder approved the checkpoint 1 contract drafts in this chat on 2026-10-27; separate contract commit `ea0a8c3` is complete.
 - Local toolchain audit on 2026-10-27: `make` was not found on PATH; `java -version` stalled in the sandbox and `JAVA_HOME` is empty. The existing Maven test passed outside the sandbox with Java 25.0.3, confirming a usable JDK for that command. A Make-compatible runner is still required for CP1's `make verify`. No full gate has been reported as passed.
 
 | ID | Question | Who decides | Safe default until decided | Blocks |

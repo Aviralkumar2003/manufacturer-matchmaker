@@ -5,10 +5,10 @@ Use this with the detailed deliverables, acceptance criteria and gates in `IMPLE
 ## Checkpoint 1: walking skeleton
 
 - [x] Create `AGENTS.md` and `.agent/` with project rules, workflows, docs, and skills.
-- [ ] Confirm PRD v4 acceptance criteria against the contracts.
+- [x] Confirm PRD v4 acceptance criteria against the approved CP1 contract draft.
 - [ ] Record SP-1 through SP-10 with actual evidence and fallbacks.
 - [ ] Create backend, frontend, landing, deploy, and scripts scaffold.
-- [ ] Review and commit contracts before feature code.
+- [x] Review and commit contracts before feature code (`ea0a8c3`).
 - [ ] Capture RED and GREEN tests for CP1 requirements.
 - [ ] Obtain approval for dependency pins and CI changes before editing them.
 - [ ] Run `make verify`, restore rehearsal, and deployment dry run.

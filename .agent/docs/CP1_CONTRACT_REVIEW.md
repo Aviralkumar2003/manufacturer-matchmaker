@@ -1,6 +1,6 @@
 # Checkpoint 1 contract review
 
-Status: approved by founder in this chat on 2026-10-27 under bootstrap U1. A separate contract commit follows the agent bootstrap commit. No feature implementation should begin before that commit.
+Status: approved by founder in this chat on 2026-10-27 under bootstrap U1. The contracts were committed separately as `ea0a8c3`, after the agent bootstrap commit `ca35e29`.
 
 | Contract | File | Requirement and acceptance link | Open point |
 |---|---|---|---|
